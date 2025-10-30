@@ -1,10 +1,38 @@
 *{
-  box-sizing :border-box;
-  margin:0;
-  padding:0;
+  margin : 0;
+  padding : 0;
+  box-sizing:border-box;
   font-family :'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
+body{
+  min-height:100vh;
+  padding:20px;
+  background-color:#1a1a2e;
+}
+.container{
+  max-width:800px;
+  margin:0 auto;
+}
+.header{
+  text-align:center;
+  margin-bottom:40px;
+  margin-top:30px;
+
+}
+
+.header h1{
+  color:#fff;
+  font-size:48px;
+  margin-bottom:10px;
+  font-weight:700;
+}
+.header p{
+  color:#fff;
+  font-size:18px;
+  font-weight:300;
+}
+
 
 .calculator{
   background-color:#000;
@@ -12,7 +40,10 @@
   padding:20px;
   border-radius:40px;
   margin:50px auto;
-  box-shadow:0 10px 20px rgba(0,0,0,0.5)
+  box-shadow:0 10px 20px rgba(0,0,0,0.5);
+  
+
+
 }
 
 .display{
@@ -35,9 +66,10 @@
 }
 .btn{
   border:none;
-  border-radius:30px;
-  font-size:20px;
+  border-radius:50%;
+  font-size:22px;
   padding:20px;
+  display:flex;
 
 }
 .btn.number{
@@ -52,13 +84,14 @@
 
 .btn.function{
   background-color:#a5a5a5;
-  color:#fff;
+  color:#000;
   font-weight: 500;
 }
 .btn.zero{
-  grid-column: span 2;
+  grid-column: span 2; /*Buttton zero is taking two columns its a bit wide*/
   text-align:left;
   padding-left:30px;
+  border-radius:30px;
 
 }
 .btn:hover{
@@ -68,3 +101,75 @@
   opacity:0.6;
   
 }
+.description{
+  background-color: #fff; 
+  border-radius: 20px;
+  padding: 40px; 
+  margin: 40px auto 40px auto
+  max-width: 600px; /* Maximum width so it doesn't stretch too wide on big screens */
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3); 
+  text-align: center; /* Centers all text inside */
+}
+.description h2{
+  color: #333; 
+  font-size: 32px;
+  margin-bottom: 20px; 
+  text-align: center; /* Makes sure heading is centered */
+}
+
+.description p{
+  color: #555; 
+  font-size: 16px; 
+  line-height: 1.8; 
+  margin-bottom: 20px; 
+  text-align: center; /* Centers the paragraph text */
+}
+.tech-stack{
+  display: flex; /* Makes tags sit next to each other in a row */
+  justify-content: center; /* Centers the tags horizontally */
+  flex-wrap: wrap; /* If tags don't fit in one line, wrap to next line */
+  gap: 15px; 
+  margin-top: 30px; /
+}
+
+.skills{
+  background-color: #667eea; 
+  color: #fff; 
+  padding: 10px 20px; /*Spacing 10px top/bottom, 20px left/right */
+  border-radius: 25px; 
+  font-size: 14px; 
+  font-weight: 600; /* Makes text bold */
+  box-shadow: 0 4px 15px rgba(102,126,234,0.3); 
+  transition: transform 0.3s ease; /* Smooth animation when hovering (0.3 seconds) */
+}
+
+.skills:hover{
+  transform: translateY(-3px); /* Moves skills up 3px when you hover over it */
+}
+
+/* FOOTER SECTION */
+.footer{
+  background-color: rgba(0,0,0,0.8); 
+  color: #fff; 
+  text-align: center; 
+  padding: 30px;
+  border-radius: 20px; 
+  margin-top: 40px; 
+}
+
+.footer p{
+  font-size: 14px;
+  margin-bottom: 10px; 
+}
+
+.footer a{
+  color: #667eea; 
+  text-decoration: none; 
+  transition: color 0.3s ease;  
+}
+
+.footer a:hover{
+  color: #764ba2; 
+}
+
+
