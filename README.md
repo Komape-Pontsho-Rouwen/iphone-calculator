@@ -23,7 +23,7 @@ JavaScript – Handles all calculations and button interactions.
 About Me / This Project
 
 I built this project to practice front end development and recreate a complex interface from scratch. It’s a mix of attention to UI/UX detail, JavaScript logic, and CSS styling.
-It’s also my first step toward more interactive web projects, so if you spot improvements or want to give feedback, feel free to reach out!
+It’s also my first step towards more interactive web projects, so if you spot improvements or want to give feedback, feel free to reach out!
 
 License
 
