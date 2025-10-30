@@ -25,6 +25,8 @@ About Me / This Project
 I built this project to practice front end development and recreate a complex interface from scratch. It’s a mix of attention to UI/UX detail, JavaScript logic, and CSS styling.
 It’s also my first step towards more interactive web projects, so if you spot improvements or want to give feedback, feel free to reach out!
 
+Use this link to test it out : https://komape-pontsho-rouwen.github.io/iphone-calculator/
+
 License
 
 This project is free to use and experiment with.
