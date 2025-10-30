@@ -15,7 +15,7 @@ Fun CSS animations for buttons and hover effects.
 
 Tech Stack
 
-HTML5 – Semantic and structured layout.
+HTML5 – Semantic and structured layout ,
 CSS3 – Modern styling, responsive design, and animations.
 JavaScript – Handles all calculations and button interactions.
 
