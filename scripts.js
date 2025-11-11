@@ -1,5 +1,4 @@
 
-
 const buttons = document.querySelectorAll('.btn'); //All calculator buttons
 const display = document.getElementById('display'); // To control what's shown on the screen
 
@@ -42,7 +41,6 @@ function handleNumber(num){
     if(num===',' && currentInput.includes(',')) 
         return; //Prevents multiple commas
 
-
     if(shouldResetScreen){
         if(num===','){
             currentInput= '0,'; //Start the decimal with 0
@@ -59,25 +57,30 @@ function handleNumber(num){
         currentInput = currentInput + num; //Append the new number
     }
 }
-updateDisplay();
+
 }
 //Function to handle operator buttons
-
 function handleOperator(op){
     if(op === '='){
-        calculate();
-        operator=''; //after calculation reset operator
-        shouldResetScreen= true;
-    }else{
-        if(previousInput !=='' && operator !==''){ //If we have an input and operator we calculate first before moving forward even without '='
+        // Only calculate if there is a stored operator
+        if(operator !== ''){
             calculate();
-            shouldResetScreen=false;
+            operator = ''; // Reset operator after calculation
+            shouldResetScreen = true;
         }
+    } else {
+        // If there is already an operator, calculate the previous step first
+        if(operator !== '' && !shouldResetScreen){
+            calculate();
+        }
+        // Store the new operator
         operator = op;
         previousInput = currentInput;
-        shouldResetScreen = true; //The last number that the user clicked should not combine like a single number with the new1
+        shouldResetScreen = true; // Ready for the next number
     }
 }
+
+    
 
 //function to handle functions
 
@@ -92,21 +95,23 @@ function handleFunction(func){
                 currentInput= (parseFloat(currentInput) * -1).toString();
                 break;
                 case '%':
-                    currentInput = (parseFloat(currentInput/100)).toString(); //Converting the string to a number for calculations
+                    currentInput = (parseFloat(currentInput)/100).toString(); //Converting the string to a number for calculations
                     break;
     }
-    updateDisplay();
+
 }
 
 //Creating the calculate function
 
 function calculate(){
-    //Converting all stored values to numbers.
-    const prev = parseFloat(previousInput);
+    const prev = parseFloat(previousInput);    // Converting all stored values to numbers
     const current = parseFloat(currentInput);
-    //We checking if any of these are not numbers
-    if(isNaN(prev) || isNaN(current)) return;
-    let result;
+    
+    if(isNaN(prev) || isNaN(current)){  //Checking if any of the variables are not numbers
+        return;
+} 
+
+var result;
 
 switch(operator){
     case '+':
@@ -119,17 +124,33 @@ switch(operator){
                 result = prev*current;
                 break;
                 case '÷':
+                    if(current === 0){
+                        result ="Error"; // prevent divition by zero
+                        currentInput = 'Error';
+                        previousInput ='';
+                        operator='';
+                        return; // Stop the calculations early
+                    }
                     result = prev/current;
                     break;
                 default:
                     return;
-}
+} 
 
+result = Number(result.toFixed(10));     
+currentInput = result.toString().replace('.' ,',');
+previousInput = currentInput;
+shouldResetScreen = true;
 
-currentInput = result.toString();
-operator ='';
-previousInput ='';
-}
+}          
+
+            
+
+                
+
+                
+
+                   
 
 
 
